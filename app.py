@@ -12,7 +12,7 @@ import os
 load_dotenv()
 
 st.title('MRI Brain Tumor Predictor')
-st.markdown("Upload your MRI FLAIR scan below to have the trained model analyze it and return its prediction for where a tumor is found. If you upload an optional T1CE scan as well, it will use both images to come up with a prediction. Note this is NOT 100% accurate and may result in false negative or positive results, so please consult with a trained physician or healthcare provider before making any decisions based on this model's prediction")
+st.markdown("Upload your MRI FLAIR scan below to have the trained model analyze it and return its prediction for where a tumor is found. If you upload an optional T1CE scan as well, it will use both images to come up with a prediction. Note this is NOT 100% accurate and may result in false negative or positive results, so please consult with a trained physician or healthcare provider before making any decisions based on this model's prediction.")
 
     
 # load trained model on startup
