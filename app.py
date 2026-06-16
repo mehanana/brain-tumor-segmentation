@@ -5,6 +5,7 @@ import segmentation_models_pytorch as smp
 from PIL import Image
 from google import genai
 from dotenv import load_dotenv
+from huggingface_hub import hf_hub_download
 import os
 
 
@@ -17,6 +18,10 @@ st.markdown("Upload your MRI FLAIR scan below to have the trained model analyze 
 # load trained model on startup
 @st.cache_resource
 def load_model():
+    model_path = hf_hub_download(
+        repo_id="mehanana/brain-tumor-segmentation",
+        filename="model_augmented (2).pth"
+    )
     model = smp.Unet(
                 encoder_name='resnet34',
                 encoder_weights='imagenet',
@@ -24,7 +29,7 @@ def load_model():
                 classes=1,
                 decoder_attention_type="scse",
             )
-    model.load_state_dict(torch.load('model_augmented.pth', map_location='cpu'))
+    model.load_state_dict(torch.load(model_path, map_location='cpu'))
     model.eval()
     return model
 
