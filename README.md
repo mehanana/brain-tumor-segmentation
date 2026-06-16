@@ -37,10 +37,10 @@ A deep learning web application that segments brain tumors from MRI scans and ge
 
 Model : Dice Score
 
-Baseline U-Net (FLAIR only) = 0.4219
-U-Net + T1ce modality = 0.4283
-Attention U-Net (scSE) = 0.4204
-Augmented model (in progress) = 0.3747*
+1. Baseline U-Net (FLAIR only) = 0.4219
+2. U-Net + T1ce modality = 0.4283
+3. Attention U-Net (scSE) = 0.4204
+4. Augmented model (in progress) = 0.3747*
 
 *Augmented model is still training and the lower score reflects insufficient epochs, not augmentation failure
 
@@ -67,7 +67,6 @@ pip install -r requirements.txt
 
 Create a `.env` file:
 GEMINI_API_KEY=your_key_here
-
 
 Run the app:
 ```bash
