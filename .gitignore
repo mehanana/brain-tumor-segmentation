@@ -1,0 +1,4 @@
+.env
+model_augmented.pth
+__pycache__/
+*.pyc
